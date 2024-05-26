@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>login & signup</title>
+</head>
+<style>
+    .bod
+{
+    background-color: rgb(38, 112, 110);
+}
+.signup
+{
+   width: 360px;
+   height: 620px;
+   margin: auto;
+   color: rgb(20, 20, 20);
+   background-color: white;
+   border-radius: 3px;
+}
+.h11
+{
+    text-align: center;
+    padding-top: 15 px;
+}
+.for{
+    width: 300px;
+    margin-left: 20px;
+}
+.lal
+{
+    display: flex;
+    margin-top: 14px;
+    font-size: 18px;
+}
+.inp{
+    width: 100%;
+    padding: 7px;
+    border:1px soild gray;
+    border-radius: 5px;
+}
+.inp[type = button]
+{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: rgb(52, 147, 147);
+    color: white;
+    border: none;
+}
+.bod
+{
+    background-color: rgb(38, 112, 110);
+}
+.login
+{
+   width: 360px;
+   height: 320px;
+   margin: auto;
+   color: rgb(20, 20, 20);
+   background-color: white;
+   border-radius: 3px;
+   justify-content: center;
+   margin-top: 200PX;
+}
+.h11
+{
+    text-align: center;
+    padding-top: 15 px;
+}
+.formm{
+    width: 300px;
+    margin-left: 20px;
+ 
+}
+.lal
+{
+    display: flex;
+    margin-top: 14px;
+    font-size: 18px;
+}
+.inp{
+    width: 100%;
+    padding: 7px;
+    border:1px soild gray;
+    border-radius: 5px;
+}
+.inp[type = button]
+{
+    width: 320px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: rgb(52, 147, 147);
+    color: white;
+    border: none;
+}
+.wel
+{
+    width: 100px;
+    height: 35px;
+    margin-top: 22px;
+    background-color: rgb(52, 147, 147);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    border:1px soild gray;
+}
+</style>
+<body class = bod>
+    
+    <div class = signup>
+        <h1 class = h11>Signup</h1>
+        <form class = for>
+            <label class = lal>Frist name </label>
+            <br>
+            <input type="text" placeholder="" class = inp id = username>
+            <br>
+            <br>
+            <label class = lal>Email </label>
+            <br>
+            <input type="text" placeholder=" "class = inp id= email>
+            <br>
+            <label class = lal>Password </label>
+            <br>
+            <input type="password" placeholder="" class = inp id = Upassword>
+            <br>
+            <label class = lal>Confirm Password </label>
+            <br>
+            <input type="password" placeholder="" class = inp id = confirmpass >
+             <br>
+            <input type="button" value="sumbit" class = inp onclick="  signup()" > 
+            <br>
+
+        </form>
+        
+    </div>
+    <div class = login>
+        <form class = formm>
+            <h1 class=" h11"> Login</h1>
+            <label class = lal> Username</label>
+            <input type="text" class="inp"  id="Uname">
+            <label class = lal> Pasword</label>
+            <input type="password" class="inp" id="pass">
+            <input type="button" value = sumbit class="inp" onclick="Login()" >
+          
+           
+        </form>
+        
+    </div>
+    <div class = login>
+        <form class = formm>
+            <h1 class=" h11"> Forget password</h1>
+            <label class = lal> Username</label>
+            <input type="text" class="inp"  id="Fusername">
+            <label class = lal> Pasword</label>
+            <input type="password" class="inp" id="newpass">
+            <input type="button" value = sumbit class="inp" onclick="abdate()" >
+          
+           
+        </form>
+        
+    </div>
+   
+    <script>
+       var user = [{username: 'salma', password : '1234'}];
+       function signup()
+       {
+          var name = document.getElementById("username").value;
+          var email = document.getElementById("email").value;
+          var pass = document.getElementById("Upassword").value;
+          var conf = document.getElementById("confirmpass").value;
+          var regex = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+          if(name==""|| email==""||pass==""||conf=="")
+          {
+             alert("please enter data ...");
+          }
+          else if (!email.match(regex))
+          {
+            alert("enter your email match thr regex ");
+          }
+          else if (pass!==conf)
+          {
+            alert("your password dont match confirm password ...");
+          }
+          else{
+            var obj = {username:name ,password : pass};
+            user.push(obj);
+            alert("signup successfuly !!");
+          }
+
+
+       }
+    </script>
+</body>
+</html>
